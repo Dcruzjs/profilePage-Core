@@ -68,10 +68,10 @@ header a {
   border-bottom: var(--sz-transparent-border) solid var(--btn-bg);
   font-weight: 600;
 }
-
-/* header li {
-  justify-content: space-evenly;
-} */
+.active {
+  border-bottom: var(--sz-transparent-border) solid var(--btn-bg);
+  font-weight: 600;
+}
 
 .btn {
   background-color: var(--btn-bg);
