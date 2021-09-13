@@ -1,3 +1,4 @@
+const yourConnections = document.querySelector("div.yourConnections");
 //Update Profile
 const editElem = document.querySelector(".edit");
 editElem.addEventListener("click", updateProfile);
@@ -50,17 +51,15 @@ function rejectRequest(e) {
 
 function acceptRequest(e) {
   const spanAccept = e.target.parentNode;
+  const spanReject = spanAccept.nextElementSibling;
   const request = spanAccept.parentNode;
-  const temp = request.remove();
-  // const connections = document.querySelector("div.yourConnections");
-  // connections.append(temp);
-
-  // let request = document.querySelector("div.connectionRequest");
-  // request = request.children;
-  // request = Array.from(request);
-  // console.log(request.indexOf(e.target));
-  // console.log(request);
+  const connectionRequest = request.parentNode;
+  const removedChild = connectionRequest.removeChild(request);
+  spanAccept.remove();
+  spanReject.remove();
+  yourConnections.append(removedChild);
   updateRequests();
+  updateConnections();
 }
 
 updateRequests();
